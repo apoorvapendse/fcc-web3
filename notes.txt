@@ -35,3 +35,32 @@ sending eth by default takes 21k gas
 1 Ether (ETH) = 1e9 Gwei
 1 Gwei = 1e9 Wei
 1 Ether (ETH) = 1e18 Wei
+
+
+Consensus is the algo used to agree on the state of the blockchain
+Sybil resistance:
+proof of work(PoW)
+all nodes do mining to find nonce for desired hash and compete for the mining bonus
+
+proof of stake
+proof stake nodes put up collateral/stake as a sybil resistance mechanism
+if nodes misbehave, their stake eth will be removed
+proof of stake largely reduces environmental impact because instead of every node trying to find the valid nonce, one single node is selected randomly and the other nodes just validate the hash
+
+
+sharding: creating blockchains inside blockchain
+layer1 : base layer blockchain implementaion
+layer2 : built on top of layer1(existing blockchains)
+
+is keyword is used to inherit a contract 
+
+^0.8.12 is compatiable with ^0.8.7
+but ^0.8.18 is not compat with ^0.5.0
+we can use different versions of solidity in different contracts during inheritance or even during deploying one smart contract from other
+
+In order to interact with any smart contract you need two things, first is contract address and second is contract ABI 
+ABI(Application Binary Interface)
+
+in order to make any function over-ridable, you need to use virtual keyword during fn declaration
+
+in order to override an already existing VIRTUAL function, you will use override keyword
