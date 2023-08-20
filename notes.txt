@@ -1,0 +1,37 @@
+oracle: 
+Any device that interacts with the off-chain(data not on blockchain) world to provide external data or computation to the smart contracts
+The oracle itself has to be decentralized 
+
+hybrid smart contracts : on chain ddata + Doracles  
+
+Chainlink = decentralized oracle network
+
+DAO = decentralized autonomous org
+
+
+Transaction Fee = Gas Price * Units of Gas used
+
+Hash: 
+A unique fixed length string to identify a piece of data. They are created by placing data into a said hash function
+SHA stands for secure has algo
+ethereum block chain uses keccak256 which is quite similar to SHA256 but keccak256 is more powerful
+
+good resource: andersbrownworth.com/blockchain/hash
+
+what miners is they try to find the nonce for any given data so that the hash of nonce and data is below certain value. That requires bruteforce iteration for every nonce value over and comparing its hash
+
+block: list of transactions mined together (their hash is obtained by iterating with various nonce values);
+nonce = number used once 
+also used to measure no of transactions from a given address 
+
+private key is used to digitally sign transaction which can then be verifed using your public key 
+however you cannot decrypt the private key from the digitally signed hash
+
+gas summary:
+as more and more people use a chain, the cost per transaction will increase
+
+sending eth by default takes 21k gas
+
+1 Ether (ETH) = 1e9 Gwei
+1 Gwei = 1e9 Wei
+1 Ether (ETH) = 1e18 Wei
