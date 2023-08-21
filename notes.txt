@@ -80,3 +80,28 @@ data feeds/ price feeds can be used to obtain conversion rates easily
 we can generate random numbers using chain link VRF
 
 Chainlink Keepers are used to make api calls in a decentralized manner
+
+
+decimals dont work in solidity
+
+libraries are very similar to contracts in solidity
+they dont have state variables and also cant send ether
+
+    using PriceConverter for uint256;
+you can use functions defined in the library for uint256 after writing this statement in the given contract;
+
+in previous solidity versions below 0.7.6 , incrementing a number above its range would revert its val to 0
+But in newer versions it gives overflow error 
+we can achieve the roll over using unchecked{number = number + x}; where addding x will make the number exceed its range;
+
+
+//sending ether can be done in three ways
+
+//transfer:(2300 gas, throws error if unsuccessful)
+        
+//send: also uses 2300 gas returns bool
+        bool isSent = payable(msg.sender).send(address(this).balance);
+        require(isSent,"withdraw failed");//this will be used to revert 
+        
+//call:forwards all gas,or set gas, returns bool and data || Also can be used to call any function without ABI
+        (bool callSuccess, bytes memory dataReturned) = payable(msg.sender).call{value : address(this).balance}("");
