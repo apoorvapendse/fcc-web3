@@ -66,3 +66,17 @@ ABI(Application Binary Interface)
 in order to make any function over-ridable, you need to use virtual keyword during fn declaration
 
 in order to override an already existing VIRTUAL function, you will use override keyword
+
+if condition in require isn't met then all the previous work gets undone
+
+Smart Contracts cannot communicate directly with the external world, most importantly APIs
+This Connectivity Problem is known as the Oracle Problem
+Chainlink is a decentralized oracle network through which we can bring in data in our smart contracts
+
+for getting latest price remember to use the right address according to your mainnet/testnet
+
+data feeds/ price feeds can be used to obtain conversion rates easily
+
+we can generate random numbers using chain link VRF
+
+Chainlink Keepers are used to make api calls in a decentralized manner
