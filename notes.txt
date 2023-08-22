@@ -105,3 +105,35 @@ we can achieve the roll over using unchecked{number = number + x}; where addding
         
 //call:forwards all gas,or set gas, returns bool and data || Also can be used to call any function without ABI
         (bool callSuccess, bytes memory dataReturned) = payable(msg.sender).call{value : address(this).balance}("");
+
+
+//constant and immutable to save gas in solidity;
+**for constant variables, the value of the variable has to be constant at compile time
+
+
+** variables that are to be set only once DURING RUNTIME (for eg: called in constructor) are written as immutable
+
+if statements with custom errors save gas compared to require statements
+
+eg:
+error MyError();
+function withdraw() external{
+  if(msg.sender!=owner){
+  revert MyError();
+  }
+}
+
+//IF WITH CUSTOM ERROR iS MORE EFFICIENT THAN REQUIRE 
+
+require(msg.sender==owner,"error")
+
+FALLBACK AND RECEIVE
+
+receive is a special function in solidity that has mutability external payable
+
+receive function is called when no data is present in the calldata
+
+fallback is very similar to receive but only gets called if calldata has some value present in it 
+
+CALLDATA always contains some HEX value
+both fallback and receive are special functions just like the contructor functions
