@@ -151,3 +151,10 @@ We can use library called solc to compile smart contracts
 
 To compile using solcjs and yarn and get binary and abi file and store it in the same folder
 yarn solcjs --bin --abi --include-path ./node_modules/ --base-path . -o . SimpleStorage.sol 
+
+We can create our own fake blockchain, like a JS virtual machine using ganache
+
+RPC URL = Remote Procedure Call URL
+ethers.js is a library used to interact with the blockchain
+
+hardhat-gas-reporter and solidity-coverage are good npm packages to aid testing
